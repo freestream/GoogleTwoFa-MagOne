@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Freestream_GoogleTwoFa>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Freestream_GoogleTwoFa>
+    </modules>
+</config>

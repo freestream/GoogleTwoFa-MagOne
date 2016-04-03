@@ -1,0 +1,42 @@
+{
+    "name": "freestream/googletwofa_magone",
+    "type": "magento-module",
+    "license": "MIT",
+    "description": "Google Two Factor Authentication module for Magento 1",
+    "authors":[
+        {
+            "name": "Anton Samuelsson",
+            "email": "samuelsson.anton@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/freestream/GoogleTwoFa-MagOne.git"
+        }
+    ],
+    "extra": {
+        "map": [
+            [
+                "app/code/community/Freestream/GoogleTwoFa/",
+                "app/code/community/Freestream/GoogleTwoFa/"
+            ],
+            [
+                "app/etc/modules/Freestream_Preselect.xml",
+                "app/etc/modules/Freestream_Preselect.xml"
+            ],
+            [
+                "app/design/adminhtml/default/default/template/freestream/googletwofa",
+                "app/design/adminhtml/default/default/template/freestream/googletwofa"
+            ],
+            [
+                "app/design/adminhtml/default/default/layout/freestream/googletwofa.xml",
+                "app/design/adminhtml/default/default/layout/freestream/googletwofa.xml"
+            ],
+            [
+                "app/etc/modules/Freestream_GoogleTwoFa.xml",
+                "app/etc/modules/Freestream_GoogleTwoFa.xml"
+            ]
+        ]
+    }
+}

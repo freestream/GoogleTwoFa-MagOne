@@ -1,0 +1,8 @@
+<?php
+$require = (Mage::helper('fsgoogletwofa')->everyoneUsingOtp()) ? 'required-entry' : '';
+?>
+<div class="input-box input-right">
+    <label for="login"><?php echo Mage::helper('adminhtml')->__('One-time password:') ?></label><br />
+    <input type="number" id="googletwofa_otp" name="login[googletwofa_otp]" class="<?= $require ?> input-text" value="" />
+</div>
+

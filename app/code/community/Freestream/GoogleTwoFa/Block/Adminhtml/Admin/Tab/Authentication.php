@@ -19,24 +19,22 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Admin_Tab_Authentication
     {
         $model  = Mage::registry('permissions_user');
         $form   = new Varien_Data_Form();
+        $helper = Mage::helper('fsgoogletwofa');
 
         $form->setHtmlIdPrefix('fs_googletwofa_');
 
         $fieldset = $form->addFieldset(
             'base_fieldset',
-            array('legend' => Mage::helper('fsgoogletwofa')->__('Two-Factor Authentication Information'))
+            array('legend' => $helper->__('Two-Factor Authentication Information'))
         );
 
         $fieldset->addField(
             'mode',
             'select',
             array(
-                'label'                 => Mage::helper('fsgoogletwofa')->__('Mode'),
-                'name'                  => 'googletwofa[mode]',
-                'values'                => array(
-                    '1' => 'Password Only',
-                    '2' => 'Password and One-time Password',
-                ),
+                'label'     => $helper->__('Mode'),
+                'name'      => 'googletwofa[mode]',
+                'values'    => Mage::getModel('fsgoogletwofa/system_source_mode')->toOptionHash()
             )
         );
 
@@ -46,7 +44,7 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Admin_Tab_Authentication
         );
 
         $generationUrl  = $this->getUrl('*/googletwofa/generate', array('user_id' => $model->getUserId()));
-        $message        = Mage::helper('fsgoogletwofa')->__('Are you sure?');
+        $message        = $helper->__('Are you sure?');
 
          $fieldset->addField(
             'generate_secret',
@@ -55,7 +53,7 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Admin_Tab_Authentication
                 'name'          => 'generate_secret',
                 'label'         => Mage::helper('fsgoogletwofa')->__('Generate New Secret'),
                 'onclick'       => "confirmSetLocation('{$message}', '{$generationUrl}')",
-                'button_label'  => Mage::helper('fsgoogletwofa')->__('Generate'),
+                'button_label'  => $helper->__('Generate'),
             )
         );
 
@@ -63,7 +61,7 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Admin_Tab_Authentication
             'secret',
             'label',
             array(
-                'label'     => Mage::helper('fsgoogletwofa')->__('Secret Key'),
+                'label'     => $helper->__('Secret Key'),
             )
         );
 
@@ -77,7 +75,7 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Admin_Tab_Authentication
             'display_image',
             array(
                 'name'      => 'qr_code',
-                'label'     => Mage::helper('fsgoogletwofa')->__('QR Code'),
+                'label'     => $helper->__('QR Code'),
             )
         );
 

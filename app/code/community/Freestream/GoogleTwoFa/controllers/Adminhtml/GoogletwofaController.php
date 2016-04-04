@@ -14,7 +14,7 @@ class Freestream_GoogleTwoFa_Adminhtml_GoogletwofaController
      */
     public function generateAction()
     {
-        $secret = Mage::getModel('fsgoogletwofa/factory')->generateSecretKey();
+        $secret = Mage::getModel('fsgoogletwofa/admin_factory')->generateSecretKey();
         $userId = $this->getRequest()->getParam('user_id');
 
         Mage::getModel('fsgoogletwofa/admin_hash')
@@ -24,5 +24,16 @@ class Freestream_GoogleTwoFa_Adminhtml_GoogletwofaController
 
         $this->_redirect('*/permissions_user/edit', array('user_id' => $userId));
     }
+
+    /**
+     * Only for allowed users.
+     *
+     * @return boolean
+     */
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('system/acl/users');
+    }
+
 }
 

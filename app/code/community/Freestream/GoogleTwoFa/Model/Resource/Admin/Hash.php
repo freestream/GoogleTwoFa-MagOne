@@ -69,6 +69,8 @@ class Freestream_GoogleTwoFa_Model_Resource_Admin_Hash
 
         $result = $read->fetchRow($select, $bind);
 
+        $hash->setData($result);
+
         $this->_afterLoad($hash);
 
         return $this;
@@ -111,7 +113,9 @@ class Freestream_GoogleTwoFa_Model_Resource_Admin_Hash
      */
     protected function _afterLoad(Mage_Core_Model_Abstract $object)
     {
-        $object->setHash(Mage::helper('core')->decrypt($object->getHash()));
+        if ($object->getId()) {
+            $object->setHash(Mage::helper('core')->decrypt($object->getHash()));
+        }
 
         return $this;
     }
@@ -126,6 +130,20 @@ class Freestream_GoogleTwoFa_Model_Resource_Admin_Hash
     protected function _beforeSave(Mage_Core_Model_Abstract $object)
     {
         $object->setHash(Mage::helper('core')->encrypt($object->getHash()));
+
+        return $this;
+    }
+
+    /**
+     * After save.
+     *
+     * @param Mage_Core_Model_Abstract $object
+     *
+     * @return Freestream_GoogleTwoFa_Model_Resource_Admin_Hash
+     */
+    protected function _afterSave(Mage_Core_Model_Abstract $object)
+    {
+        $object->setHash(Mage::helper('core')->decrypt($object->getHash()));
 
         return $this;
     }

@@ -16,7 +16,7 @@ class Freestream_GoogleTwoFa_Block_Adminhtml_Permissions_User_Renderer_Qr
      */
     public function getElementHtml()
     {
-        $imageUrl = Mage::helper('fsgoogletwofa')
+        $imageUrl = Mage::helper('fsgoogletwofa/admin')
             ->getQRCodeGoogleUrl(Mage::registry('permissions_user'));
 
         return "<img src='{$imageUrl}' />";

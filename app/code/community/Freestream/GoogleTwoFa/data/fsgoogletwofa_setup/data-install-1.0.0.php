@@ -6,7 +6,7 @@ foreach ($collection as $user) {
         ->loadByAdmin($user);
 
     if (!$model->getId()) {
-        $secret = Mage::getModel('fsgoogletwofa/factory')->generateSecretKey();
+        $secret = Mage::getModel('fsgoogletwofa/admin_factory')->generateSecretKey();
         $model->setHash($secret)->setMode(1)->save();
     }
 }

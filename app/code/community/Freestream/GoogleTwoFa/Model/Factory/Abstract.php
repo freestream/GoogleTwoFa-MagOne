@@ -6,7 +6,7 @@
  * @module  Freestream
  * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
  */
-class Freestream_GoogleTwoFa_Model_Factory
+abstract class Freestream_GoogleTwoFa_Model_Factory_Abstract
     extends Varien_Object
 {
     /**
@@ -48,21 +48,7 @@ class Freestream_GoogleTwoFa_Model_Factory
      *
      * @return boolean
      */
-    public function authenticateOtp($username, $otp)
-    {
-        $secretModel = Mage::getModel('fsgoogletwofa/admin_hash')
-            ->loadByUsername($username);
-
-        if (!$secretModel->getId() || $secretModel->getMode() == 1) {
-            return true;
-        }
-
-        if (!$this->verifyKey($secretModel->getHash(), $otp)) {
-            Mage::throwException(Mage::helper('adminhtml')->__('Access denied.'));
-        }
-
-        return true;
-    }
+    abstract public function authenticateOtp($username, $otp);
 
     /**
      * Verify one-time password against user secret.
@@ -77,7 +63,7 @@ class Freestream_GoogleTwoFa_Model_Factory
         $timestamp = $this->getTimestamp();
 
         for ($i = -1; $i <= 1; $i++) {
-            if ($this->getCode($secret, $timestamp + $i) == $code) {
+            if ($this->getCode($secret, $timestamp + $i) === $code) {
                 return true;
             }
         }

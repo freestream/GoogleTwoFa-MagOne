@@ -41,7 +41,7 @@
             <admin_user_authenticate_before>
                 <observers>
                     <fsgoogletwofa>
-                        <class>fsgoogletwofa/observer</class>
+                        <class>fsgoogletwofa/admin_observer</class>
                         <method>authenticateOtp</method>
                     </fsgoogletwofa>
                 </observers>
@@ -49,11 +49,11 @@
             <admin_user_save_after>
                 <observers>
                     <fsgoogletwofa_assign_secret>
-                        <class>fsgoogletwofa/observer</class>
+                        <class>fsgoogletwofa/admin_observer</class>
                         <method>assignSecretToAdmin</method>
                     </fsgoogletwofa_assign_secret>
                     <fsgoogletwofa_save>
-                        <class>fsgoogletwofa/observer</class>
+                        <class>fsgoogletwofa/admin_observer</class>
                         <method>saveAdminSecret</method>
                     </fsgoogletwofa_save>
                 </observers>

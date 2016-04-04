@@ -24,9 +24,6 @@ class Freestream_GoogleTwoFa_Model_Admin_Factory
         $secretModel = Mage::getModel('fsgoogletwofa/admin_hash')
             ->loadByUsername($username);
 
-        dahbug::dump($secretModel);
-        dahbug::dump($secretModel->getMode());
-
         if (!$secretModel->getId() || $secretModel->getMode() == 1) {
             return true;
         }

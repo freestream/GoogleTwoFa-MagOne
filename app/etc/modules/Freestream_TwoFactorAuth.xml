@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Freestream_TwoFactorAuth>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Freestream_TwoFactorAuth>
+    </modules>
+</config>

@@ -1,8 +1,8 @@
 {
-    "name": "freestream/googletwofa_magone",
+    "name": "freestream/twofactorauth_magone",
     "type": "magento-module",
     "license": "MIT",
-    "description": "Google Two Factor Authentication module for Magento 1",
+    "description": "Two-Factor Authentication module for Magento 1",
     "authors":[
         {
             "name": "Anton Samuelsson",
@@ -12,30 +12,30 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/freestream/GoogleTwoFa-MagOne.git"
+            "url": "https://github.com/freestream/TwoFactorAuth-MagOne.git"
         }
     ],
     "extra": {
         "map": [
             [
-                "app/code/community/Freestream/GoogleTwoFa/",
-                "app/code/community/Freestream/GoogleTwoFa/"
+                "app/code/community/Freestream/TwoFactorAuth/",
+                "app/code/community/Freestream/TwoFactorAuth/"
             ],
             [
-                "app/etc/modules/Freestream_Preselect.xml",
-                "app/etc/modules/Freestream_Preselect.xml"
+                "app/etc/modules/Freestream_TwoFactorAuth.xml",
+                "app/etc/modules/Freestream_TwoFactorAuth.xml"
             ],
             [
-                "app/design/adminhtml/default/default/template/freestream/googletwofa",
-                "app/design/adminhtml/default/default/template/freestream/googletwofa"
+                "app/design/adminhtml/default/default/template/freestream/twofactorauth",
+                "app/design/adminhtml/default/default/template/freestream/twofactorauth"
             ],
             [
-                "app/design/adminhtml/default/default/layout/freestream/googletwofa.xml",
-                "app/design/adminhtml/default/default/layout/freestream/googletwofa.xml"
+                "app/design/adminhtml/default/default/layout/freestream/twofactorauth.xml",
+                "app/design/adminhtml/default/default/layout/freestream/twofactorauth.xml"
             ],
             [
-                "app/etc/modules/Freestream_GoogleTwoFa.xml",
-                "app/etc/modules/Freestream_GoogleTwoFa.xml"
+                "app/etc/modules/Freestream_TwoFactorAuth.xml",
+                "app/etc/modules/Freestream_TwoFactorAuth.xml"
             ]
         ]
     }

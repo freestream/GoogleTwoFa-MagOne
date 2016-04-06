@@ -48,7 +48,7 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
     }
 
     /**
-     * Save password mode for admin user.
+     * Save auth mode for admin user.
      *
      * @param  Varien_Event_Observer $observer
      *
@@ -60,7 +60,15 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
         $model  = Mage::getModel('fstwofactorauth/admin_hash')
             ->loadByAdminId($post->getData('user_id'));
 
-        $model->setMode($post->getData('twofactorauth/mode'))->save();
+        $model->setMode($post->getData('twofactorauth/mode'));
+
+        if (!$model->getHash()) {
+            $model->setHash(
+                Mage::getModel('fstwofactorauth/admin_factory')->generateSecretKey()
+            );
+        }
+
+        $model->save();
 
         return $this;
     }

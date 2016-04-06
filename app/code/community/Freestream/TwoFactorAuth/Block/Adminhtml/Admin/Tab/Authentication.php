@@ -43,7 +43,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
             Mage::getConfig()->getBlockClassName('fstwofactorauth/adminhtml_permissions_user_renderer_button')
         );
 
-        $generationUrl  = $this->getUrl('*/twofactorauth/generate', array('user_id' => $model->getUserId()));
+        $generationUrl  = $this->getUrl('*/twofa/generate', array('user_id' => $model->getUserId()));
         $message        = $helper->__('Are you sure?');
 
         $fieldset->addField(

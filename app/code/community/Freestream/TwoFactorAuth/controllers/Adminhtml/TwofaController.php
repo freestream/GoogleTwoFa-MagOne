@@ -34,6 +34,5 @@ class Freestream_TwoFactorAuth_Adminhtml_TwofaController
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/acl/users');
     }
-
 }
 

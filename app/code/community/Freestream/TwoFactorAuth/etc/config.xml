@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 /**
- *
+ * Module configuration file.
  *
  * @package Freestream_TwoFactorAuth
  * @module  Freestream
@@ -114,3 +114,4 @@
         </routers>
     </admin>
 </config>
+

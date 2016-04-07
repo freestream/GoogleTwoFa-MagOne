@@ -25,7 +25,7 @@
 ?>
 <?php
 /**
- * Helper class.
+ * General helper class.
  *
  * @package Freestream_TwoFactorAuth
  * @module  Freestream
@@ -37,7 +37,7 @@ class Freestream_TwoFactorAuth_Helper_Data
     /**
      * Returns a string with valid characters.
      *
-     * @param  Mage_Admin_Model_User $admin
+     * @param  string $string
      *
      * @return string
      */

@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 /**
- *
+ * Adminhml layout configuration.
  *
  * @package Freestream_TwoFactorAuth
  * @module  Freestream
@@ -50,3 +50,4 @@
         </reference>
     </adminhtml_permissions_user_edit>
 </layout>
+

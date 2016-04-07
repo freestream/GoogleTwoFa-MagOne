@@ -96,7 +96,7 @@ abstract class Freestream_TwoFactorAuth_Model_Factory_Abstract
     }
 
     /**
-     * Calculate the code, with given secret and point in time
+     * Calculate the code, with given secret and point in time.
      *
      * @param  string  $secret
      * @param  integer $timestamp
@@ -120,7 +120,6 @@ abstract class Freestream_TwoFactorAuth_Model_Factory_Abstract
      * Decode a base64 string.
      *
      * @param  string  $secret
-     * @param  integer $timestamp
      *
      * @return string
      */

@@ -83,3 +83,4 @@ class Freestream_TwoFactorAuth_Model_System_Source_Mode
         return $options;
     }
 }
+

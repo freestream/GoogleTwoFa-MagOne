@@ -24,6 +24,11 @@
  */
 ?>
 <?php
+/**
+ * Data upgrade to generate a secret key for all admin users.
+ */
+?>
+<?php
 $collection = Mage::getModel('admin/user')->getCollection();
 
 foreach ($collection as $user) {
@@ -35,3 +40,4 @@ foreach ($collection as $user) {
         $model->setHash($secret)->setMode(1)->save();
     }
 }
+

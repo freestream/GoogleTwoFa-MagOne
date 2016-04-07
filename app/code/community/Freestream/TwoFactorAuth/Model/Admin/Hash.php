@@ -70,7 +70,6 @@ class Freestream_TwoFactorAuth_Model_Admin_Hash
         return $this;
     }
 
-
     /**
      * Load by admin username.
      *

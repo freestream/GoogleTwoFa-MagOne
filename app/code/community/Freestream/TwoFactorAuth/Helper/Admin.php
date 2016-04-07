@@ -25,7 +25,7 @@
 ?>
 <?php
 /**
- * Helper class.
+ * Admin user helper class.
  *
  * @package Freestream_TwoFactorAuth
  * @module  Freestream
@@ -66,3 +66,4 @@ class Freestream_TwoFactorAuth_Helper_Admin
         return Mage::getResourceModel('fstwofactorauth/admin_hash')->everyoneUsingOtp();
     }
 }
+

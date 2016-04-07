@@ -24,10 +24,18 @@
  */
 ?>
 <?php
+/**
+ * Admin login form One-time password template.
+ *
+ * @package Freestream_TwoFactorAuth
+ * @module  Freestream
+ * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ */
+
 $require = (Mage::helper('fstwofactorauth/admin')->everyoneUsingOtp()) ? 'required-entry' : '';
 ?>
 <div class="input-box input-right">
     <label for="login"><?php echo Mage::helper('adminhtml')->__('One-time password:') ?></label><br />
-    <input type="number" id="twofactorauth_otp" name="login[twofactorauth_otp]" class="<?= $require ?> input-text" value="" />
+    <input type="number" id="twofactorauth_otp" name="login[twofactorauth_otp]" class="<?php echo $require ?> input-text" value="" />
 </div>
 

@@ -46,7 +46,7 @@ class Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
      * Load secret by admin user id.
      *
      * @param  Freestream_TwoFactorAuth_Model_Admin_Hash $hash
-     * @param  integer                                 $adminId
+     * @param  integer                                   $adminId
      *
      * @return Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
      */
@@ -73,7 +73,7 @@ class Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
      * Load secret by admin username.
      *
      * @param  Freestream_TwoFactorAuth_Model_Admin_Hash $hash
-     * @param  string                                  $username
+     * @param  string                                    $username
      *
      * @return Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
      */

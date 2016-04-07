@@ -53,3 +53,4 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Permissions_User_Renderer_Button
             ->toHtml();
     }
 }
+

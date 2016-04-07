@@ -24,6 +24,15 @@
  */
 ?>
 <?php
+/**
+ * Initial table structure for admin hash.
+ *
+ * @package Freestream_TwoFactorAuth
+ * @module  Freestream
+ * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ */
+?>
+<?php
 $installer = $this;
 $installer->startSetup();
 $connection = $installer->getConnection();
@@ -110,3 +119,4 @@ if (!$installer->getConnection()->isTableExists($table->getName())) {
 }
 
 $installer->endSetup();
+

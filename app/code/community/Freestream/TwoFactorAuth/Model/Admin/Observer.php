@@ -42,6 +42,10 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
      */
     public function authenticateOtp(Varien_Event_Observer $observer)
     {
+        if (!Mage::getStoreConfigFlag('fstwofactorauth/general/enabled')) {
+            return $this;
+        }
+
         $username   = $observer->getUsername();
         $post       = new Varien_Object(Mage::app()->getRequest()->getPost());
 

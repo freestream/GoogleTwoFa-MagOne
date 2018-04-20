@@ -27,9 +27,7 @@
 /**
  * Two-Factor Authentication.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 class Freestream_TwoFactorAuth_Model_Admin_Observer
 {

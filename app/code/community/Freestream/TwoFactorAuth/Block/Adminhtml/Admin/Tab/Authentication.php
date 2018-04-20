@@ -27,9 +27,7 @@
 /**
  * Two Factor Authentication Tab.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
     extends Mage_Adminhtml_Block_Widget_Form

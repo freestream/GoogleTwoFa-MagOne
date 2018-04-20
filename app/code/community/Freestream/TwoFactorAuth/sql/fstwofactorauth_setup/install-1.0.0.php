@@ -27,9 +27,7 @@
 /**
  * Initial table structure for admin hash.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 ?>
 <?php

@@ -27,9 +27,7 @@
 /**
  * General helper class.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 class Freestream_TwoFactorAuth_Helper_Data
     extends Mage_Core_Helper_Abstract
@@ -58,3 +56,4 @@ class Freestream_TwoFactorAuth_Helper_Data
         return preg_replace('/\s+/', '', ucwords($string));
     }
 }
+

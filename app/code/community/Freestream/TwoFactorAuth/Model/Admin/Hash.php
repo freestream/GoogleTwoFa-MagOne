@@ -27,9 +27,7 @@
 /**
  * Admin secret hash model.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 class Freestream_TwoFactorAuth_Model_Admin_Hash
     extends Mage_Core_Model_Abstract

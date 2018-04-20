@@ -27,9 +27,7 @@
 /**
  * Button renderer.
  *
- * @package Freestream_TwoFactorAuth
- * @module  Freestream
- * @author  Anton Samuelsson <samuelsson.anton@gmail.com>
+ * @author Anton Samuelsson <samuelsson.anton@gmail.com>
  */
 class Freestream_TwoFactorAuth_Block_Adminhtml_Permissions_User_Renderer_Button
     extends Varien_Data_Form_Element_Abstract

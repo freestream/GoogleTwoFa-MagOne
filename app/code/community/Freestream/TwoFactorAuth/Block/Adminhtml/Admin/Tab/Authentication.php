@@ -48,17 +48,17 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
 
         $fieldset = $form->addFieldset(
             'base_fieldset',
-            array('legend' => $helper->__('Two-Factor Authentication Information'))
+            ['legend' => $helper->__('Two-Factor Authentication Information')]
         );
 
         $fieldset->addField(
             'mode',
             'select',
-            array(
+            [
                 'label'     => $helper->__('Mode'),
                 'name'      => 'twofactorauth[mode]',
                 'values'    => Mage::getModel('fstwofa/system_source_mode')->toOptionHash()
-            )
+            ]
         );
 
         $fieldset->addType(
@@ -66,26 +66,26 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
             Mage::getConfig()->getBlockClassName('fstwofa/adminhtml_permissions_user_renderer_button')
         );
 
-        $generationUrl  = $this->getUrl('*/twofa/generate', array('user_id' => $model->getUserId()));
+        $generationUrl  = $this->getUrl('*/twofa/generate', ['user_id' => $model->getUserId()]);
         $message        = $helper->__('Are you sure?');
 
         $fieldset->addField(
             'generate_secret',
             'button',
-            array(
+            [
                 'name'          => 'generate_secret',
                 'label'         => Mage::helper('fstwofa')->__('Generate New Secret'),
                 'onclick'       => "confirmSetLocation('{$message}', '{$generationUrl}')",
                 'button_label'  => $helper->__('Generate'),
-            )
+            ]
         );
 
         $fieldset->addField(
             'secret',
             'label',
-            array(
+            [
                 'label'     => $helper->__('Secret Key'),
-            )
+            ]
         );
 
         $fieldset->addType(
@@ -96,10 +96,10 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
         $fieldset->addField(
             'qr_code',
             'display_image',
-            array(
+            [
                 'name'      => 'qr_code',
                 'label'     => $helper->__('QR Code'),
-            )
+            ]
         );
 
         if ($model->getUserId()) {
@@ -107,10 +107,10 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
                 ->loadByAdmin($model);
 
             $form->setValues(
-                array(
+                [
                     'secret'    => $secretModel->getHash(),
                     'mode'      => $secretModel->getMode(),
-                )
+                ]
             );
         }
 

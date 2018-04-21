@@ -36,12 +36,12 @@ abstract class Freestream_TwoFactorAuth_Model_Factory_Abstract
      *
      * @var array
      */
-    protected $_lut = array(
+    protected $_lut = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
         'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
         'Y', 'Z', '2', '3', '4', '5', '6', '7',
-    );
+    ];
 
     /**
      * Generate a digit secret key in base32 format.

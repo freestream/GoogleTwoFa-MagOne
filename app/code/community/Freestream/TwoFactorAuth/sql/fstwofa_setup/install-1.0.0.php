@@ -44,58 +44,58 @@ $table = $installer->getConnection()
         'hash_id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
         null,
-        array(
+        [
             'identity'  => true,
             'unsigned'  => true,
             'nullable'  => false,
             'primary'   => true,
-        ),
+        ],
         'Hash ID'
     )
     ->addColumn(
         'user_id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
         null,
-        array(
+        [
             'unsigned'      => true,
             'nullable'      => false,
-        ),
+        ],
         'User ID'
     )
     ->addColumn(
         'mode',
         Varien_Db_Ddl_Table::TYPE_SMALLINT,
         1,
-        array(
+        [
             'unsigned'      => true,
             'nullable'      => false,
-        ),
+        ],
         'Password Mode'
     )
     ->addColumn(
         'hash',
         Varien_Db_Ddl_Table::TYPE_TEXT,
         64,
-        array(
+        [
             'nullable'  => false,
-        ),
+        ],
         'Hash'
     )
     ->addIndex(
         $installer->getIdxName(
             'fstwofa/admin_hash',
-            array('user_id'),
+            ['user_id'],
             Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE
         ),
-        array('user_id'),
-        array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE)
+        ['user_id'],
+        ['type' => Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE]
     )
     ->addIndex(
         $installer->getIdxName(
             'fstwofa/admin_hash',
-            array('hash')
+            ['hash']
         ),
-        array('hash')
+        ['hash']
     )
     ->addForeignKey(
         $installer->getFkName(

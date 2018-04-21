@@ -54,9 +54,9 @@ class Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
         $select = $read->select()->from($this->getMainTable())
             ->where('user_id = :user_id');
 
-        $bind = array(
+        $bind = [
             'user_id' => $adminId
-        );
+        ];
 
         $result = $read->fetchRow($select, $bind);
 
@@ -78,17 +78,17 @@ class Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
     public function loadByUsername(Freestream_TwoFactorAuth_Model_Admin_Hash $hash, $username)
     {
         $read   = $this->getReadConnection();
-        $select = $read->select()->from(array('gtw' => $this->getMainTable()))
+        $select = $read->select()->from(['gtw' => $this->getMainTable()])
             ->join(
-                array('au' => $this->getTable('admin/user')),
+                ['au' => $this->getTable('admin/user')],
                 'gtw.user_id = au.user_id',
-                array()
+                []
             )
             ->where('au.username = :username');
 
-        $bind = array(
+        $bind = [
             'username' => $username
-        );
+        ];
 
         $result = $read->fetchRow($select, $bind);
 

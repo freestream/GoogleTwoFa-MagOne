@@ -45,7 +45,7 @@ class Freestream_TwoFactorAuth_Adminhtml_TwofaController
             ->setHash($secret)
             ->save();
 
-        $this->_redirect('*/permissions_user/edit', array('user_id' => $userId));
+        $this->_redirect('*/permissions_user/edit', ['user_id' => $userId]);
     }
 
     /**

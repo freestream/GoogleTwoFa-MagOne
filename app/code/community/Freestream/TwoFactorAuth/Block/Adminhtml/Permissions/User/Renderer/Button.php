@@ -40,14 +40,12 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Permissions_User_Renderer_Button
     public function getElementHtml()
     {
         return Mage::app()->getLayout()->createBlock('adminhtml/widget_button')
-            ->setData(
-                array(
-                    'name'      => $this->getName(),
-                    'label'     => $this->getButtonLabel(),
-                    'onclick'   => $this->getOnclick(),
-                    'class'     => $this->getClass(),
-                )
-            )
+            ->setData([
+                'name'      => $this->getName(),
+                'label'     => $this->getButtonLabel(),
+                'onclick'   => $this->getOnclick(),
+                'class'     => $this->getClass(),
+            ])
             ->toHtml();
     }
 }

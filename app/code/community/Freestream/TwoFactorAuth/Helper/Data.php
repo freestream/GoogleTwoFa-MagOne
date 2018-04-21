@@ -55,5 +55,26 @@ class Freestream_TwoFactorAuth_Helper_Data
 
         return preg_replace('/\s+/', '', ucwords($string));
     }
+
+    /**
+     * Generates a random string.
+     * Optionally, you can give it a desired string length.
+     *
+     * @param  integer $length
+     *
+     * @return string
+     */
+    public function generatePhrase($length = 10)
+    {
+        $chars  = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $len    = strlen($characters);
+        $str    = '';
+
+        for ($i = 0; $i < (int) $length; $i++) {
+            $str .= $chars[rand(0, $len - 1)];
+        }
+
+        return $str;
+    }
 }
 

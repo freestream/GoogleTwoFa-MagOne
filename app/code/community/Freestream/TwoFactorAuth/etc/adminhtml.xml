@@ -38,9 +38,9 @@
                          <children>
                              <config>
                                  <children>
-                                     <fstwofactorauth>
+                                     <fstwofa>
                                          <title>Freestream - Two-Factor Authentication</title>
-                                     </fstwofactorauth>
+                                     </fstwofa>
                                  </children>
                              </config>
                          </children>

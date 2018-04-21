@@ -37,7 +37,7 @@ class Freestream_TwoFactorAuth_Model_Resource_Admin_Hash
      */
     protected function _construct()
     {
-        $this->_init('fstwofactorauth/admin_hash', 'hash_id');
+        $this->_init('fstwofa/admin_hash', 'hash_id');
     }
 
     /**

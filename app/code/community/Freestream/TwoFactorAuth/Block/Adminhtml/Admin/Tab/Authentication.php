@@ -42,7 +42,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
     {
         $model  = Mage::registry('permissions_user');
         $form   = new Varien_Data_Form();
-        $helper = Mage::helper('fstwofactorauth');
+        $helper = Mage::helper('fstwofa');
 
         $form->setHtmlIdPrefix('fs_twofactorauth_');
 
@@ -57,13 +57,13 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
             array(
                 'label'     => $helper->__('Mode'),
                 'name'      => 'twofactorauth[mode]',
-                'values'    => Mage::getModel('fstwofactorauth/system_source_mode')->toOptionHash()
+                'values'    => Mage::getModel('fstwofa/system_source_mode')->toOptionHash()
             )
         );
 
         $fieldset->addType(
             'button',
-            Mage::getConfig()->getBlockClassName('fstwofactorauth/adminhtml_permissions_user_renderer_button')
+            Mage::getConfig()->getBlockClassName('fstwofa/adminhtml_permissions_user_renderer_button')
         );
 
         $generationUrl  = $this->getUrl('*/twofa/generate', array('user_id' => $model->getUserId()));
@@ -74,7 +74,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
             'button',
             array(
                 'name'          => 'generate_secret',
-                'label'         => Mage::helper('fstwofactorauth')->__('Generate New Secret'),
+                'label'         => Mage::helper('fstwofa')->__('Generate New Secret'),
                 'onclick'       => "confirmSetLocation('{$message}', '{$generationUrl}')",
                 'button_label'  => $helper->__('Generate'),
             )
@@ -90,7 +90,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
 
         $fieldset->addType(
             'display_image',
-            Mage::getConfig()->getBlockClassName('fstwofactorauth/adminhtml_permissions_user_renderer_qr')
+            Mage::getConfig()->getBlockClassName('fstwofa/adminhtml_permissions_user_renderer_qr')
         );
 
         $fieldset->addField(
@@ -103,7 +103,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
         );
 
         if ($model->getUserId()) {
-            $secretModel = Mage::getSingleton('fstwofactorauth/admin_hash')
+            $secretModel = Mage::getSingleton('fstwofa/admin_hash')
                 ->loadByAdmin($model);
 
             $form->setValues(
@@ -126,7 +126,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
      */
     public function getTabLabel()
     {
-        return Mage::helper('fstwofactorauth')->__('Authentication');
+        return Mage::helper('fstwofa')->__('Authentication');
     }
 
     /**
@@ -136,7 +136,7 @@ class Freestream_TwoFactorAuth_Block_Adminhtml_Admin_Tab_Authentication
      */
     public function getTabTitle()
     {
-        return Mage::helper('fstwofactorauth')->__('Authentication');
+        return Mage::helper('fstwofa')->__('Authentication');
     }
 
     /**

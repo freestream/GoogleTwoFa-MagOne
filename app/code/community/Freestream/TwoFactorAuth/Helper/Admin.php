@@ -40,12 +40,12 @@ class Freestream_TwoFactorAuth_Helper_Admin
      */
     public function getQRCodeGoogleUrl(Mage_Admin_Model_User $admin)
     {
-        $secretModel = Mage::getSingleton('fstwofactorauth/admin_hash')
+        $secretModel = Mage::getSingleton('fstwofa/admin_hash')
             ->loadByAdmin($admin);
 
         $secret     = $secretModel->getHash();
-        $username   = Mage::helper('fstwofactorauth')->getCleanString($admin->getUsername());
-        $company    = Mage::helper('fstwofactorauth')->getCleanString(
+        $username   = Mage::helper('fstwofa')->getCleanString($admin->getUsername());
+        $company    = Mage::helper('fstwofa')->getCleanString(
             Mage::getStoreConfig('general/store_information/name')
         );
         $name       = "{$company}:{$admin->getUsername()}";
@@ -61,7 +61,7 @@ class Freestream_TwoFactorAuth_Helper_Admin
      */
     public function everyoneUsingOtp()
     {
-        return Mage::getResourceModel('fstwofactorauth/admin_hash')->everyoneUsingOtp();
+        return Mage::getResourceModel('fstwofa/admin_hash')->everyoneUsingOtp();
     }
 }
 

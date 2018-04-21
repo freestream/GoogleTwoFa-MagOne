@@ -44,7 +44,7 @@ class Freestream_TwoFactorAuth_Model_Admin_Factory
      */
     public function authenticateOtp($username, $otp)
     {
-        $secretModel = Mage::getModel('fstwofactorauth/admin_hash')
+        $secretModel = Mage::getModel('fstwofa/admin_hash')
             ->loadByUsername($username);
 
         if (!$secretModel->getId() || $secretModel->getMode() == 1) {

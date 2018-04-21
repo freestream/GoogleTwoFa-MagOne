@@ -31,13 +31,13 @@
 -->
 <config>
     <tabs>
-        <freestream translate="label" module="fstwofactorauth">
+        <freestream translate="label" module="fstwofa">
             <label>Freestream</label>
             <sort_order>150</sort_order>
         </freestream>
     </tabs>
     <sections>
-        <fstwofactorauth translate="label" module="fstwofactorauth">
+        <fstwofa translate="label" module="fstwofa">
             <label>Two-Factor Authentication</label>
             <tab>freestream</tab>
             <sort_order>100</sort_order>
@@ -64,7 +64,7 @@
                     </fields>
                 </general>
             </groups>
-        </fstwofactorauth>
+        </fstwofa>
     </sections>
 </config>
 

@@ -37,56 +37,56 @@
     </modules>
     <global>
         <helpers>
-            <fstwofactorauth>
+            <fstwofa>
                 <class>Freestream_TwoFactorAuth_Helper</class>
-            </fstwofactorauth>
+            </fstwofa>
         </helpers>
         <models>
-            <fstwofactorauth>
+            <fstwofa>
                 <class>Freestream_TwoFactorAuth_Model</class>
-                <resourceModel>fstwofactorauth_resource</resourceModel>
-            </fstwofactorauth>
-            <fstwofactorauth_resource>
+                <resourceModel>fstwofa_resource</resourceModel>
+            </fstwofa>
+            <fstwofa_resource>
                 <class>Freestream_TwoFactorAuth_Model_Resource</class>
                 <entities>
                     <admin_hash>
                         <table>fs_admin_twofactorauth_hash</table>
                     </admin_hash>
                 </entities>
-            </fstwofactorauth_resource>
+            </fstwofa_resource>
         </models>
         <blocks>
-            <fstwofactorauth>
+            <fstwofa>
                 <class>Freestream_TwoFactorAuth_Block</class>
-            </fstwofactorauth>
+            </fstwofa>
         </blocks>
         <resources>
-            <fstwofactorauth_setup>
+            <fstwofa_setup>
                 <setup>
                     <module>Freestream_TwoFactorAuth</module>
                     <class>Mage_Core_Model_Resource_Setup</class>
                 </setup>
-            </fstwofactorauth_setup>
+            </fstwofa_setup>
         </resources>
         <events>
             <admin_user_authenticate_before>
                 <observers>
-                    <fstwofactorauth>
-                        <class>fstwofactorauth/admin_observer</class>
+                    <fstwofa>
+                        <class>fstwofa/admin_observer</class>
                         <method>authenticateOtp</method>
-                    </fstwofactorauth>
+                    </fstwofa>
                 </observers>
             </admin_user_authenticate_before>
             <admin_user_save_after>
                 <observers>
-                    <fstwofactorauth_assign_secret>
-                        <class>fstwofactorauth/admin_observer</class>
+                    <fstwofa_assign_secret>
+                        <class>fstwofa/admin_observer</class>
                         <method>assignSecretToAdmin</method>
-                    </fstwofactorauth_assign_secret>
-                    <fstwofactorauth_save>
-                        <class>fstwofactorauth/admin_observer</class>
+                    </fstwofa_assign_secret>
+                    <fstwofa_save>
+                        <class>fstwofa/admin_observer</class>
                         <method>saveAdminSecret</method>
-                    </fstwofactorauth_save>
+                    </fstwofa_save>
                 </observers>
             </admin_user_save_after>
         </events>
@@ -94,9 +94,9 @@
     <adminhtml>
         <layout>
             <updates>
-                <fstwofactorauth>
+                <fstwofa>
                     <file>freestream/twofactorauth.xml</file>
-                </fstwofactorauth>
+                </fstwofa>
             </updates>
         </layout>
     </adminhtml>

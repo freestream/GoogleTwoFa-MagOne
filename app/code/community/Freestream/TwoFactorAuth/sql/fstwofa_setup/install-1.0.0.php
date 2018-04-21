@@ -36,10 +36,10 @@ $installer->startSetup();
 $connection = $installer->getConnection();
 
 /**
- * Create table 'fstwofactorauth/admin_hash'
+ * Create table 'fstwofa/admin_hash'
  */
 $table = $installer->getConnection()
-    ->newTable($installer->getTable('fstwofactorauth/admin_hash'))
+    ->newTable($installer->getTable('fstwofa/admin_hash'))
     ->addColumn(
         'hash_id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
@@ -83,7 +83,7 @@ $table = $installer->getConnection()
     )
     ->addIndex(
         $installer->getIdxName(
-            'fstwofactorauth/admin_hash',
+            'fstwofa/admin_hash',
             array('user_id'),
             Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE
         ),
@@ -92,14 +92,14 @@ $table = $installer->getConnection()
     )
     ->addIndex(
         $installer->getIdxName(
-            'fstwofactorauth/admin_hash',
+            'fstwofa/admin_hash',
             array('hash')
         ),
         array('hash')
     )
     ->addForeignKey(
         $installer->getFkName(
-            'fstwofactorauth/admin_hash',
+            'fstwofa/admin_hash',
             'user_id',
             'admin/user',
             'user_id'

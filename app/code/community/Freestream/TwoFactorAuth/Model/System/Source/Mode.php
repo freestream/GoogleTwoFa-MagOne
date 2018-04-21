@@ -55,11 +55,11 @@ class Freestream_TwoFactorAuth_Model_System_Source_Mode
         return array(
             array(
                 'value' => self::MODE_PWD_ONLY,
-                'label' => Mage::helper('fstwofactorauth')->__('Password Only')
+                'label' => Mage::helper('fstwofa')->__('Password Only')
             ),
             array(
                 'value' => self::MODE_PWD_AND_OTP,
-                'label' => Mage::helper('fstwofactorauth')->__('Password and One-time Password')
+                'label' => Mage::helper('fstwofa')->__('Password and One-time Password')
             ),
         );
     }

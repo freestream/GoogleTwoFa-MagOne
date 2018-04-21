@@ -37,10 +37,10 @@ class Freestream_TwoFactorAuth_Adminhtml_TwofaController
      */
     public function generateAction()
     {
-        $secret = Mage::getModel('fstwofactorauth/admin_factory')->generateSecretKey();
+        $secret = Mage::getModel('fstwofa/admin_factory')->generateSecretKey();
         $userId = $this->getRequest()->getParam('user_id');
 
-        Mage::getModel('fstwofactorauth/admin_hash')
+        Mage::getModel('fstwofa/admin_hash')
             ->loadByAdminId($userId)
             ->setHash($secret)
             ->save();

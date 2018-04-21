@@ -32,13 +32,13 @@
 <layout>
     <adminhtml_index_login>
         <reference name="form.additional.info">
-            <block type="adminhtml/template" name="fstwofactorauth.login.otp" template="freestream/twofactorauth/login.phtml" />
+            <block type="adminhtml/template" name="fstwofa.login.otp" template="freestream/twofactorauth/login.phtml" />
         </reference>
     </adminhtml_index_login>
 
     <adminhtml_permissions_user_edit>
         <reference name="adminhtml.permissions.user.edit.tabs" >
-            <block type="fstwofactorauth/adminhtml_admin_tab_authentication" name="fs_twofactorauth_tab" />
+            <block type="fstwofa/adminhtml_admin_tab_authentication" name="fs_twofactorauth_tab" />
 
             <action method="addTabAfter">
                 <name>fs_twofactorauth_section</name>

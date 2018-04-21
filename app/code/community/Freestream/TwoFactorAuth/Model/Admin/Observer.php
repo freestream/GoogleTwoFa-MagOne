@@ -40,14 +40,14 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
      */
     public function authenticateOtp(Varien_Event_Observer $observer)
     {
-        if (!Mage::getStoreConfigFlag('fstwofactorauth/general/enabled')) {
+        if (!Mage::getStoreConfigFlag('fstwofa/general/enabled')) {
             return $this;
         }
 
         $username   = $observer->getUsername();
         $post       = new Varien_Object(Mage::app()->getRequest()->getPost());
 
-        Mage::getModel('fstwofactorauth/admin_factory')
+        Mage::getModel('fstwofa/admin_factory')
             ->authenticateOtp($username, $post->getData('login/twofactorauth_otp'));
 
         return $this;
@@ -63,11 +63,11 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
     public function assignSecretToAdmin(Varien_Event_Observer $observer)
     {
         $user   = $observer->getObject();
-        $model  = Mage::getModel('fstwofactorauth/admin_hash')
+        $model  = Mage::getModel('fstwofa/admin_hash')
             ->loadByAdmin($user);
 
         if (!$model->getId()) {
-            $secret = Mage::getModel('fstwofactorauth/admin_factory')->generateSecretKey();
+            $secret = Mage::getModel('fstwofa/admin_factory')->generateSecretKey();
             $model->setHash($secret)->setMode(1)->save();
         }
 
@@ -84,14 +84,14 @@ class Freestream_TwoFactorAuth_Model_Admin_Observer
     public function saveAdminSecret(Varien_Event_Observer $observer)
     {
         $post   = new Varien_Object(Mage::app()->getRequest()->getPost());
-        $model  = Mage::getModel('fstwofactorauth/admin_hash')
+        $model  = Mage::getModel('fstwofa/admin_hash')
             ->loadByAdminId($post->getData('user_id'));
 
         $model->setMode($post->getData('twofactorauth/mode'));
 
         if (!$model->getHash()) {
             $model->setHash(
-                Mage::getModel('fstwofactorauth/admin_factory')->generateSecretKey()
+                Mage::getModel('fstwofa/admin_factory')->generateSecretKey()
             );
         }
 
